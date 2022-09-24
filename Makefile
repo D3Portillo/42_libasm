@@ -6,7 +6,7 @@
 #    By: dcerrito <dcerrito@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/24 08:06:16 by dcerrito          #+#    #+#              #
-#    Updated: 2022/09/24 22:00:36 by dcerrito         ###   ########.fr        #
+#    Updated: 2022/09/24 21:11:57 by dcerrito         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,15 +21,16 @@ SRC = ./src/
 LIB = \
 	ft_strlen.s	\
 
-LIB_OBJS = $(addprefix $(SRC), $(patsubst %.s, %.o, $(LIB)))
+OBJS = $(addprefix $(SRC), $(patsubst %.s, %.o, $(LIB)))
 
-$(NAME): $(LIB_OBJS)
-	@tar -xf ./nasm-2.15.05-macosx.zip
-	$(PACK) $(NAME) $(LIB_OBJS)
+$(NAME): install $(OBJS)
+	$(PACK) $(NAME) $(OBJS)
 all: $(NAME)
+install:
+	@tar -xf ./nasm-2.15.05-macosx.zip
 clean:
-	$(FRM) $(LIB_OBJS)
+	$(FRM) $(OBJS)
 fclean: clean
 	$(FRM) $(NAME)
 re: fclean all
-.PHONY: re clean fclean bonus all
+.PHONY: all install clean fclean re
