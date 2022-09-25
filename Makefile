@@ -6,7 +6,7 @@
 #    By: dcerrito <dcerrito@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/24 08:06:16 by dcerrito          #+#    #+#              #
-#    Updated: 2022/09/24 21:11:57 by dcerrito         ###   ########.fr        #
+#    Updated: 2022/09/25 07:46:38 by dcerrito         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,20 +17,26 @@ FRM = rm -rf
 AS = ./nasm-2.15.05/nasm
 ASFLAGS = -fmacho64
 
+CC = gcc
+CFLAGS = -Wall -Werror -Wextra -I. -fno-pie
+
 SRC = ./src/
 LIB = \
 	ft_strlen.s	\
 
 OBJS = $(addprefix $(SRC), $(patsubst %.s, %.o, $(LIB)))
 
-$(NAME): install $(OBJS)
+$(NAME): $(NASM) $(OBJS)
 	$(PACK) $(NAME) $(OBJS)
 all: $(NAME)
-install:
+$(NASM):
 	@tar -xf ./nasm-2.15.05-macosx.zip
 clean:
 	$(FRM) $(OBJS)
 fclean: clean
 	$(FRM) $(NAME)
+it: all
+	@$(CC) $(CFLAGS) main.c libasm.a
+	./a.out
 re: fclean all
-.PHONY: all install clean fclean re
+.PHONY: all clean fclean it re
