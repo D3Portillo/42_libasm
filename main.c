@@ -11,9 +11,22 @@
 /* ************************************************************************** */
 
 #include "libasm.h"
+#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <fcntl.h>
+#include <string.h>
 
 int	main(void)
 {
-	ft_strlen("32");
+	char	*stuff;
+	int		fd;
+
+	stuff = malloc(INT32_MAX);
+	fd = open("docs/x86-64-cheatsheet.pdf", O_RDONLY);
+	read(fd, stuff, INT32_MAX);
+	printf("%zu\n", ft_strlen("123456"));
+	printf("%zu\n", ft_strlen(stuff));
+	printf("%zu\n", strlen(stuff));
 	return (0);
 }
