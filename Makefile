@@ -6,7 +6,7 @@
 #    By: dcerrito <dcerrito@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/24 08:06:16 by dcerrito          #+#    #+#              #
-#    Updated: 2022/09/25 07:46:38 by dcerrito         ###   ########.fr        #
+#    Updated: 2022/09/29 20:01:08 by dcerrito         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,8 @@ AS = ./nasm-2.15.05/nasm
 ASFLAGS = -fmacho64
 
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra -I. -fno-pie
+# -g to add debug info
+CFLAGS = -Wall -Werror -Wextra -I. -fno-pie -g
 
 SRC = ./src/
 LIB = \
