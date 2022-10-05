@@ -6,7 +6,7 @@
 /*   By: dcerrito <dcerrito@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 13:19:45 by dcerrito          #+#    #+#             */
-/*   Updated: 2022/10/05 13:25:52 by dcerrito         ###   ########.fr       */
+/*   Updated: 2022/10/05 16:24:48 by dcerrito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,13 @@ void	ft_strcmp_test(void)
 	str2 = "AAA";
 	printf("ccmp: %d\n", strcmp(str1, str2));
 	printf("acmp: %d\n", ft_strcmp(str1, str2));
-
 	str1 = "";
 	printf("ccmp: %d\n", strcmp(str1, str2));
 	printf("acmp: %d\n", ft_strcmp(str1, str2));
-
+	str1 = NULL;
+	str2 = "";
+	printf("ccmp: %d\n", strcmp(str1, str2));
+	printf("acmp: %d\n", ft_strcmp(str1, str2));
 	str1 = "~~";
 	str2 = "~";
 	printf("ccmp: %d\n", strcmp(str1, str2));
