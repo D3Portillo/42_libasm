@@ -25,6 +25,7 @@ SRC = ./src/
 LIB = \
 	ft_strlen.s	\
 	ft_strcmp.s	\
+	ft_strcpy.s	\
 
 OBJS = $(addprefix $(SRC), $(patsubst %.s, %.o, $(LIB)))
 
