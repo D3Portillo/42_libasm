@@ -1,34 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strcpy_test.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcerrito <dcerrito@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 22:05:32 by dcerrito          #+#    #+#             */
-/*   Updated: 2022/10/05 14:06:49 by dcerrito         ###   ########.fr       */
+/*   Updated: 2022/10/05 13:25:47 by dcerrito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tests/tests.h"
+#include "tests.h"
 
-static void	execute(void fn(void), int run_all, char *arg, char *fn_name)
+void	ft_strcpy_test(void)
 {
-	if (run_all || !strcmp(fn_name, arg))
-		fn();
-}
+	char	*to_copy;
+	char	dest[255];
 
-int	main(int argc, char **argv)
-{
-	char	*fn_name;
-	int		run_all;
-
-	run_all = argc == 1;
-	fn_name = NULL;
-	if (argc > 1)
-		fn_name = argv[1];
-	execute(ft_strcmp_test, run_all, "strcmp", fn_name);
-	execute(ft_strcpy_test, run_all, "strcpy", fn_name);
-	execute(ft_strlen_test, run_all, "strlen", fn_name);
-	return (0);
+	to_copy = "Awdawdawdawaa    1 1 2 223 12 12 2 12 AAaaaa ____ awawd .";
+	ft_strcpy(dest, to_copy);
+	printf("copying: %s\n", to_copy);
+	printf("results: %s\n", dest);
+	printf("size_source: %zu\n", ft_strlen(to_copy));
+	printf("size_result: %zu\n", ft_strlen(dest));
 }

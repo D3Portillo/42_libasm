@@ -6,7 +6,7 @@
 #    By: dcerrito <dcerrito@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/24 08:06:16 by dcerrito          #+#    #+#              #
-#    Updated: 2022/09/29 20:01:08 by dcerrito         ###   ########.fr        #
+#    Updated: 2022/10/05 13:58:27 by dcerrito         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,10 @@ clean:
 fclean: clean
 	$(FRM) $(NAME)
 it: all
-	@$(CC) $(CFLAGS) main.c libasm.a
-	./a.out
+	@$(CC) $(CFLAGS) main.c tests/*.c libasm.a
+	@./a.out
+it\:%: re
+	@echo "Testing for #$*"
+	@./a.out "$*"
 re: fclean all
 .PHONY: all clean fclean it re
