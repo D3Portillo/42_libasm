@@ -6,7 +6,7 @@
 /*   By: dcerrito <dcerrito@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 19:54:42 by dcerrito          #+#    #+#             */
-/*   Updated: 2022/10/05 14:49:42 by dcerrito         ###   ########.fr       */
+/*   Updated: 2022/10/07 21:41:38 by dcerrito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,6 @@
 void	ft_strcmp_test(void);
 void	ft_strcpy_test(void);
 void	ft_strlen_test(void);
+void	ft_read_test(void);
 
 #endif
