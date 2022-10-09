@@ -25,3 +25,8 @@ Function specific test:
 ```sh
 make it:strlen
 ```
+
+### External tester
+
+I'm using https://github.com/cacharle/libasm_test.
+Replace `LIBASM_PATH = ../libasm` to `LIBASM_PATH = ../`

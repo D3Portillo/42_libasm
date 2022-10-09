@@ -3,3 +3,4 @@ nasm-2.15.05/
 *.out.*
 *.o
 *.a
+tester
