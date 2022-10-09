@@ -6,7 +6,7 @@
 #    By: dcerrito <dcerrito@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/24 08:06:16 by dcerrito          #+#    #+#              #
-#    Updated: 2022/10/07 21:38:30 by dcerrito         ###   ########.fr        #
+#    Updated: 2022/10/10 00:01:05 by dcerrito         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,9 @@ LIB = \
 	ft_strlen.s	\
 	ft_strcmp.s	\
 	ft_strcpy.s	\
+	ft_strdup.s	\
 	ft_read.s	\
+	ft_write.s	\
 
 OBJS = $(addprefix $(SRC), $(patsubst %.s, %.o, $(LIB)))
 
