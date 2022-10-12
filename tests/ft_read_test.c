@@ -6,29 +6,42 @@
 /*   By: dcerrito <dcerrito@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 22:05:32 by dcerrito          #+#    #+#             */
-/*   Updated: 2022/10/09 23:49:55 by dcerrito         ###   ########.fr       */
+/*   Updated: 2022/10/12 03:47:49 by dcerrito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tests.h"
-#define FILE "mocks/full_text_line"
+#define MOCK_FILE_SINGLE_LINE "mocks/full_text_line"
+#define READ_STACK_SIZE 120
+
+static void	try_read(char *file)
+{
+	char	destination[READ_STACK_SIZE];
+	int		fd[2];
+
+	ft_read((fd[0] = open(file, O_RDONLY)), destination, READ_STACK_SIZE);
+	printf("Ft_read : %s\n", destination);
+	printf("Status  : %s\n", strerror(errno));
+	read((fd[1] = open(file, O_RDONLY)), destination, READ_STACK_SIZE);
+	printf("Original:%s\n", destination);
+	printf("Status  :%s\n\n", strerror(errno));
+	close(fd[0]);
+	close(fd[1]);
+}
+
+static void	try_readfd(int fd)
+{
+	char	destination[READ_STACK_SIZE];
+
+	ft_read(fd, destination, READ_STACK_SIZE);
+	printf("Custom ft_read: %s\n", destination);
+	printf("Status        : %s\n", strerror(errno));
+	printf("errno         : %d\n", errno);
+	close(fd);
+}
 
 void	ft_read_test(void)
 {
-	char	*copycat;
-	char	*original;
-	int		fds[2];
-
-	original = malloc(INT_MAX);
-	copycat = malloc(INT_MAX);
-	printf("returns: %zd\n",
-		read((fds[0] = open(FILE, O_RDONLY)), original, INT_MAX));
-	printf("Original:%s\n", original);
-	printf("Status:%s \n\n", strerror(errno));
-	printf("returns: %zd\n",
-		ft_read((fds[1] = open(FILE, O_RDONLY)), copycat, INT_MAX));
-	printf("Copycat :%s\n", copycat);
-	printf("Status:%s \n\n", strerror(errno));
-	close(fds[0]);
-	close(fds[1]);
+	try_read(MOCK_FILE_SINGLE_LINE);
+	try_readfd(-1);
 }
