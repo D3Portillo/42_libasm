@@ -6,13 +6,14 @@
 /*   By: dcerrito <dcerrito@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 19:54:42 by dcerrito          #+#    #+#             */
-/*   Updated: 2022/10/09 23:58:51 by dcerrito         ###   ########.fr       */
+/*   Updated: 2022/10/11 00:14:20 by dcerrito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBASM_H
 # define LIBASM_H
 
+# include <stdlib.h>
 # include <limits.h>
 # include <sys/types.h>
 
