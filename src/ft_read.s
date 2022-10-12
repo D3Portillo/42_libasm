@@ -4,6 +4,7 @@ extern ___error
 ; @see https://opensource.apple.com/source/xnu/xnu-2782.20.48/bsd/kern/syscalls.master
 READ equ 0x2000003
 
+; read(int fd, void *buff, size_t limit);
 section .text
   _ft_read:
     mov rax, READ
