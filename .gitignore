@@ -4,3 +4,4 @@ nasm-2.15.05/
 *.o
 *.a
 tester
+tester2

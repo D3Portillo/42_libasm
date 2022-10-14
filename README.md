@@ -26,7 +26,21 @@ Function specific test:
 make it:strlen
 ```
 
-### External tester
+### External testers
 
 I'm using https://github.com/cacharle/libasm_test.
 Replace `LIBASM_PATH = ../libasm` to `LIBASM_PATH = ../`
+
+```
+git clone https://github.com/cacharle/libasm_test tester && \
+make -C tester
+```
+
+**Tripouille:**
+
+https://github.774.gs/Tripouille/libasmTester 😘.
+
+```
+git clone https://github.774.gs/Tripouille/libasmTester tester2 && \
+make m -C tester2
+```
