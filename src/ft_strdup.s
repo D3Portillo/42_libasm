@@ -2,7 +2,7 @@ global _ft_strdup
 extern _ft_strlen, _ft_strcpy
 extern _malloc
 
-; strdup(const char *src);
+; strdup(char *src);
 section .text
   _ft_strdup:
     ; get len of rdi

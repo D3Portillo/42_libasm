@@ -1,5 +1,6 @@
 global _ft_strcmp
 
+; strcmp(char *s1, char *s2)
 section .text
   _ft_strcmp:
     mov rax, 0

@@ -1,5 +1,6 @@
 global _ft_strlen
 
+; strlen(char *str);
 section .text
   _ft_strlen:
     mov rax, -1
