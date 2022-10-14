@@ -1,18 +1,20 @@
 global _ft_strcpy
 
+; strcpy(char *dst, char *src)
 section .text
   _ft_strcpy:
-    mov rax, -1
+    mov rax, 0
   copycat:
+    mov rcx, [rsi + rax]
+    mov [rdi + rax], rcx
+    ; copy over rsi to rdi
+    cmp byte [rsi + rax], 0
+    je terminate
+    ; terminate until source(%rsi) end
     inc rax
-    mov rcx, [rsi]
-    mov [rdi], rcx
-    ; we cannot byte copy like this:
-    ; `mov [rdi], [rsi]`
-    ; thus we store [rsi] in rcx per iteration
-    inc rdi
-    inc rsi
-    cmp byte [rsi], 0
-    jne copycat
-    ; loop until end of source string
+    jmp copycat
+    ; loop unil str end
+  terminate:
+    mov rax, rdi
+    ; set return to be dst
     ret
