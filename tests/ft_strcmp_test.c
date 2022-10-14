@@ -6,7 +6,7 @@
 /*   By: dcerrito <dcerrito@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 13:19:45 by dcerrito          #+#    #+#             */
-/*   Updated: 2022/10/10 21:23:50 by dcerrito         ###   ########.fr       */
+/*   Updated: 2022/10/14 13:39:09 by dcerrito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,12 @@ void	ft_strcmp_test(void)
 	printf("acmp: %d\n", ft_strcmp(str1, str2));
 	str1 = "\xff\xff";
 	str2 = "\xff";
+	printf("ccmp: %d\n", strcmp(str1, str2));
+	printf("acmp: %d\n", ft_strcmp(str1, str2));
+	str1 = "";
+	printf("ccmp: %d\n", strcmp(str1, ""));
+	printf("acmp: %d\n", ft_strcmp(str1, ""));
+	str2 = "\n\n\f\r\t";
 	printf("ccmp: %d\n", strcmp(str1, str2));
 	printf("acmp: %d\n", ft_strcmp(str1, str2));
 }
