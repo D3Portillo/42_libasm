@@ -6,7 +6,7 @@
 /*   By: dcerrito <dcerrito@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 22:05:32 by dcerrito          #+#    #+#             */
-/*   Updated: 2022/10/07 21:45:56 by dcerrito         ###   ########.fr       */
+/*   Updated: 2022/10/14 16:04:35 by dcerrito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ int	main(int argc, char **argv)
 	runif("strcmp", fn_arg, ft_strcmp_test, &status);
 	runif("strcpy", fn_arg, ft_strcpy_test, &status);
 	runif("strlen", fn_arg, ft_strlen_test, &status);
+	runif("strdup", fn_arg, ft_strdup_test, &status);
+	runif("write", fn_arg, ft_write_test, &status);
 	runif("read", fn_arg, ft_read_test, &status);
 	if (status != SUCCESS)
 		printf("%s\n", status);
