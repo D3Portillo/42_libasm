@@ -10,9 +10,12 @@ Read more at [en.subject.pdf](https://github.com/D3Portillo/libasm/blob/master/e
 
 Functions
 
+- read
 - strcmp
 - strcpy
+- strdup
 - strlen
+- write
 
 To run all:
 
@@ -24,6 +27,8 @@ Function specific test:
 
 ```sh
 make it:strlen
+make it:strcpy
+//...
 ```
 
 ### External testers
@@ -42,5 +47,5 @@ https://github.774.gs/Tripouille/libasmTester 😘.
 
 ```
 git clone https://github.774.gs/Tripouille/libasmTester tester2 && \
-make m -C tester2
+make -C tester2
 ```
