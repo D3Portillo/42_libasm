@@ -11,9 +11,13 @@ section .text
     syscall
     jnc terminate
     push rax
+    ; save syscall status
     call ___error
-    pop rbx
-    mov [rax], rbx
+    ; get errno reference
+    pop rcx
+    mov [rax], rcx
+    ; set errno to rcx(from push rax)
     mov rax, -1
+    ; ft_write status to -1
   terminate:
     ret

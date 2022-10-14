@@ -17,8 +17,8 @@ section .text
     call ___error
     ; get errno global variable pointer and store it in rax.
     ; @see https://github.com/cacharle/libasm_test/issues/2#issuecomment-622371402
-    pop rbx
-    mov [rax], rbx
+    pop rcx
+    mov [rax], rcx
     ; set pointer value for errno to be `syscall` return value from READ
     mov rax, -1
     ; return error status code as expected for read implementation
