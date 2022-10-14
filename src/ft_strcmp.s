@@ -16,11 +16,10 @@ section .text
     cmp al, cl
     ; compare and iterate until `al != cl`
     je iter_over_args
-    ja skip_and_substr
+    ja subtract_registers
     ; if `cl >= al` skip next line
-    ; else subtract 256 to rax
     sub rax, 256
-  skip_and_substr:
+  subtract_registers:
     sub al, bl
   terminate:
     ret
