@@ -6,7 +6,7 @@
 #    By: dcerrito <dcerrito@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/24 08:06:16 by dcerrito          #+#    #+#              #
-#    Updated: 2022/10/10 00:01:05 by dcerrito         ###   ########.fr        #
+#    Updated: 2022/10/16 04:07:06 by dcerrito         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,18 +30,28 @@ LIB = \
 	ft_read.s	\
 	ft_write.s	\
 
+BONUS = \
+	ft_atoi_base.s	\
+	ft_list_push_front.s	\
+	ft_list_remove_if.s	\
+	ft_list_size.s	\
+	ft_list_sort.s	\
+
 OBJS = $(addprefix $(SRC), $(patsubst %.s, %.o, $(LIB)))
+BONUS_OBJS = $(addprefix $(SRC), $(patsubst %.s, %.o, $(BONUS)))
 
 $(NAME): $(NASM) $(OBJS)
 	$(PACK) $(NAME) $(OBJS)
 all: $(NAME)
 $(NASM):
 	@tar -xf ./nasm-2.15.05-macosx.zip
+bonus: $(NASM) $(BONUS_OBJS)
+	$(PACK) $(NAME) $(BONUS_OBJS)
 clean:
 	$(FRM) $(OBJS)
 fclean: clean
 	$(FRM) $(NAME)
-tests: all
+tests: all bonus
 	@$(CC) $(CFLAGS) main.c tests/*.c libasm.a
 it: tests
 	@./a.out
