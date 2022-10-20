@@ -6,7 +6,7 @@
 /*   By: dcerrito <dcerrito@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 19:54:42 by dcerrito          #+#    #+#             */
-/*   Updated: 2022/10/15 23:19:16 by dcerrito         ###   ########.fr       */
+/*   Updated: 2022/10/19 14:45:34 by dcerrito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,9 @@ void	ft_list_push_front_test(void);
 void	ft_list_remove_if_test(void);
 void	ft_list_size_test(void);
 void	ft_list_sort_test(void);
+
+// C reference implementation for testing
+
+int		ft_atoi_base_c(char *str, char *base);
 
 #endif
